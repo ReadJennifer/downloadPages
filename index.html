@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="password" onkeyup="password_length(event);">
+        <div class="bar_container">
+            <div id="password-length"></div>
+        </div>
+    </form>
+    <script>
+        function password_length(event){
+            const bar = document.getElementById("password-length");
+            var length = event.target.value.length;
+            bar.className = ""
+            if(length<5){
+                bar.classList.add("bad");
+            }else if(length >= 5 && length < 10){
+                bar.classList.add("good");
+            }else if(length >= 10){
+                bar.classList.add("perfect");
+            }
+        }
+    </script>
+</body>
+</html>
